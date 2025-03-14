@@ -6,6 +6,7 @@
 	<title>Tạo bảng Survey khách hàng</title>
 </head>
 <body>
+	<form action="#" method="post">
 	<h2>Market Research Survey</h2>
 	<p>Please take a few moments to complete this satisfaction survey.</p>
 	<label>What is your age range?</label> <br>
@@ -25,13 +26,58 @@
 		</select>
 		<br> <br>
 	<labe>Gender Identity</label> <br>
-		<input type="radio" name="Gender"> 	
-		<label>Male</label>	<br>
-		<input type="radio" name="Gender">	
-		<label>Female</label> <br>	
-		<input type="radio" name="Gender">	
-		<label>Nonbinary</label> <br>
-		<label>Other</label> <br>		
-		&nbsp&nbsp&nbsp&nbsp<input type="text" name="other_Gender"maxlength="250" placeholder="Specify..." oninput="updateCharacterCount()">
+		<input type="radio" name="Gender"> Male <br>
+		<input type="radio" name="Gender"> Female <br>		
+		<input type="radio" name="Gender">Nonbinary<br>
+		<input type="radio" name="Gender"> Other		
+		&nbsp&nbsp&nbsp&nbsp<input type="text" name="other_Gender"maxlength="250" oninput="updateCharacterCount()"> <br>
+	<label>Which of the following products have your purchased in the last 2 months. Please check all that apply.</label>	<br>
+		<input type="checkbox" name="Product 1" value="Product 1">Product 1 <br>
+		<input type="checkbox" name="Product 2" value="Product 2">Product 2 <br>
+		<input type="checkbox" name="Product 3" value="Product 3">Product 3 <br>
+	<label>How often would you use our new product?</label><br>
+		<input type="radio" name="often"> Daily <br>
+		<input type="radio" name="often"> Weekly<br>
+		<input type="radio" name="often"> Monthly<br>
+	<label>What would you pay for the new product?</label> <br>
+	<label>$</label>
+	<input type="Dollars" name="Dollars">
+	<label>.</label>
+	<input type="Cents" name="Cents"> <br>
+	<span style="margin-left:50px;">Dollars</span>
+	<span style="margin-left: 150px;">Cents</span> <br>
+	<label>What features would you like to see in the new product.</label> <br>
+	<textarea rows="6" cols="100"></textarea>
+	<p>Please rate your level of agreement with the following statements.</p>
+	<table border="1px" cellspacing="0" width="100%">
+                <tr style="background: #e6e6e6;">
+                    <th></th>
+                    <th>Strongly Disagree</th>
+                    <th>Disagree</th>
+                    <th>Agree</th>
+                </tr>
+                <tr>
+                    <td>Our products are priced fairly.</td>
+                    <td style="text-align: center;"><input type="radio" name="priced_fairly" value="1"></td>
+                    <td style="text-align: center;"><input type="radio" name="priced_fairly" value="2"></td>
+                    <td style="text-align: center;"><input type="radio" name="priced_fairly" value="3"></td>
+                </tr>
+                <tr>
+                    <td>Our products are high quality.</td>
+                    <td style="text-align: center;"><input type="radio" name="high_quality" value="1"></td>
+                    <td style="text-align: center;"><input type="radio" name="high_quality" value="2"></td>
+                    <td style="text-align: center;"><input type="radio" name="high_quality" value="3"></td>
+                </tr>
+                <tr>
+                    <td>You would recommend our product to a friend or coworker.</td>
+                    <td style="text-align: center;"><input type="radio" name="recommend" value="1"></td>
+                    <td style="text-align: center;"><input type="radio" name="recommend" value="2"></td>
+                    <td style="text-align: center;"><input type="radio" name="recommend" value="3"></td>
+                </tr>
+            </table>
+            <br>
+            <button type="submit" class="submit-button">Submit</button>
+	</form>
+
 </body>
 </html>

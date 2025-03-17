@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi nhiệt độ</title>
+</head>
+<body>
+<h2>Chuyển đổi nhiệt độ từ Celsius sang Fahrenheit</h2>
+<label for="celsius">Độ C (Celsius):</label>
+<input type="number" id="celsius" name="doc">
+<button onclick="convertTemperature()">Nhập</button>
+
+<p id="result"></p>
+
+<script>
+    function convertTemperature() {
+        let celsius = document.getElementById("celsius").value; // Lấy giá trị nhập
+        let fahrenheit = (celsius * 9 / 5) + 32; // Công thức chuyển đổi
+        document.getElementById("result").innerHTML = "Nhiệt độ Fahrenheit tương ứng: " + fahrenheit.toFixed(2) + "°F";
+    }
+</script>
+</body>
+</html>

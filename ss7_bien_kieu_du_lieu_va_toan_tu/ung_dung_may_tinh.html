@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy tính cộng trừ</title>
+    <style>
+        input {
+            padding: 5px;
+            margin-right: 5px;
+        }
+        button {
+            padding: 5px 10px;
+        }
+        .result {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="number" id="num1" placeholder="Nhập số thứ nhất">
+    <input type="number" id="num2" placeholder="Nhập số thứ hai">
+    <button onclick="calculate('+')">Cộng</button>
+    <button onclick="calculate('-')">Trừ</button>
+
+    <div class="result">
+        <p><strong>Result:</strong></p>
+        <p id="output">Đây là kết quả</p>
+    </div>
+
+    <script>
+        const operatorFunctions = {
+            "+": (a, b) => a + b,
+            "-": (a, b) => a - b
+        };
+
+        function calculate(operator) {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let result = (isNaN(num1) || isNaN(num2)) 
+                ? "Vui lòng nhập số hợp lệ!" 
+                : operatorFunctions[operator]?.(num1, num2) || "Phép toán không hợp lệ!";
+            
+            document.getElementById("output").innerText = result;
+        }
+    </script>
+
+</body>
+</html>

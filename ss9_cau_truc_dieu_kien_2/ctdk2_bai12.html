@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ctdk2_bai12</title>
+</head>
+<body>
+<script>
+  let p = prompt("Nhập tiền gốc (VNĐ):");
+  let n = prompt("Nhập số tháng:");
+  let r = 0.006 / 12; // Lãi suất tháng (0.6%/năm)
+
+  if (p <= 0 || n <= 0) {
+    document.write("Nhập sai! Hãy nhập số dương.");
+  } else {
+    let A = p * Math.pow(1 + r, n);
+    document.write("Sau " + n + " tháng, bạn có: " + A.toLocaleString()+ " VNĐ");
+  }
+</script>
+</body>
+</html>

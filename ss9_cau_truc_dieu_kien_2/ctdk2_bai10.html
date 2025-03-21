@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ctdk2_bai10</title>
+</head>
+<body>
+<!--Bài 10: Viết chương trình tính giá điện.-->
+<script>
+  let kwh = prompt("Nhập số điện tiêu thụ (kw/h: ")
+  let x = 0;
+
+  if (kwh <= 0){
+    document.write("Không hợp lệ, vui lòng nhập lại!")
+  }else {
+    if(kwh <= 50){
+      x = kwh * 1728;
+    }else if (kwh <= 100){
+      x = 50 * 1728 + (kWh - 50) * 1786;
+    } else if (kWh <= 200) {
+      x = 50 * 1728 + 50 * 1786 + (kWh - 100) * 2074;
+    } else if (kWh <= 300) {
+      x = 50 * 1728 + 50 * 1786 + 100 * 2074 + (kWh - 200) * 2612;
+    } else if (kWh <= 400) {
+      x = 50 * 1728 + 50 * 1786 + 100 * 2074 + 100 * 2612 + (kWh - 300) * 2919;
+    } else {
+      x = 50 * 1728 + 50 * 1786 + 100 * 2074 + 100 * 2612 + 100 * 2919 + (kWh - 400) * 3015;
+    }
+    document.write("Tổng tiền điện phải trả: " + x.toLocaleString() + " VNĐ");
+  }
+</script>
+</body>
+</html>

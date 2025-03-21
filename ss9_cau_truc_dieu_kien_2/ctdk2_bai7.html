@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Giải phương trình bậc 2</title>
+</head>
+<body>
+<script>
+  let a = prompt("Nhập vào số a:");
+  let b = prompt("Nhập vào số b:");
+  let c = prompt("Nhập vào số c:");
+
+  if (a === 0 && b === 0 && c === 0) {
+    document.write("Phương trình có vô số nghiệm.");
+  } else if (a === 0) {
+    if (b === 0) {
+      document.write("Phương trình vô nghiệm.");
+    } else {
+      let x = -c / b;
+      document.write("Phương trình bậc 1 có nghiệm là: x = " + x);
+    }
+  } else {
+    // Tính delta
+    let delta = b * b - 4 * a * c;
+    if (delta < 0) {
+      document.write("Phương trình vô nghiệm.");
+    } else if (delta === 0) {
+      let x = -b / (2 * a);
+      document.write("Phương trình có nghiệm kép: x = " + x);
+    } else {
+      // Tính căn bậc hai của delta bằng Math.sqrt()
+      let sqrtDelta = Math.sqrt(delta);
+      let x1 = (-b + sqrtDelta) / (2 * a);
+      let x2 = (-b - sqrtDelta) / (2 * a);
+
+      document.write("Phương trình có 2 nghiệm phân biệt:<br>");
+      document.write("x1 = " + x1 + "<br>");
+      document.write("x2 = " + x2);
+    }
+  }
+</script>
+</body>
+</html>

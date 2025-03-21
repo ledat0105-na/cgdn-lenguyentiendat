@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cấu trúc điều kiện - bài 5</title>
+</head>
+<body>
+<!--Bài 5: Xếp loại học lực của học sinh dựa trên:-->
+<!--Điểm bài kiểm tra.-->
+<!--Điểm thi giữa kỳ.-->
+<!--Điểm thi cuối kỳ.-->
+<script>
+    let diemkt = prompt("Nhập điểm bài kiểm tra: ")
+    let diemgk = prompt("Nhập điểm thi giữa kỳ: ")
+    let diemck = prompt("Nhập điểm thi cuối kỳ: ")
+
+    let diemtb = ((diemkt) + (diemgk * 2) + (diemck * 3))/6;
+    if(diemtb >= 8.5){
+        document.write("Xếp loại GIỎI")
+    }else if (diemtb >= 6.5) {
+        document.write("Xếp loại KHÁ")
+    }else if (diemtb >= 5) {
+        document.write("Xếp loại TRUNG BÌNH")
+    }else {
+        document.write("Xếp loại YẾU")
+    }
+</script>
+</body>
+</html>

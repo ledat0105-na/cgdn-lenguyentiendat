@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cấu trúc điều kiện - Bài 6</title>
+</head>
+<body>
+<!--Bài 6: Tính hoa hồng nhận được dựa trên mức doanh số bán hàng.-->
+<script>
+  let ds = prompt("Nhập doanh số bán hàng: ")
+  let hh
+  if (ds >= 30000000){
+    (hh = ds * 0.2);
+    document.write("Hoa hồng của bạn là: " + hh.toLocaleString() + " VNĐ");
+  }else if (ds >= 15000000) {
+  (hh = ds * 0.15)
+    document.write("Hoa hồng của bạn là: " + hh.toLocaleString() + " VNĐ");
+  }else if (ds >= 5000000) {
+  (hh = ds * 0.1)
+    document.write("Hoa hồng của bạn là: " + hh.toLocaleString() + " VNĐ");
+  }else {
+    document.write("số không hợp lệ - vui lòng nhập lại!")
+  }
+</script>
+</body>
+</html>

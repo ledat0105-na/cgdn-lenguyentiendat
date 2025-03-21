@@ -10,11 +10,11 @@
 <!--Điểm thi giữa kỳ.-->
 <!--Điểm thi cuối kỳ.-->
 <script>
-    let diemkt = prompt("Nhập điểm bài kiểm tra: ")
-    let diemgk = prompt("Nhập điểm thi giữa kỳ: ")
-    let diemck = prompt("Nhập điểm thi cuối kỳ: ")
+    let diemKiemTra = prompt("Nhập điểm bài kiểm tra: ")
+    let diemGiuaKy = prompt("Nhập điểm thi giữa kỳ: ")
+    let diemCuoiKy = prompt("Nhập điểm thi cuối kỳ: ")
 
-    let diemtb = ((diemkt) + (diemgk * 2) + (diemck * 3))/6;
+    let diemtb = ((diemKiemTra) + (diemgk * 2) + (diemCuoiKy * 3))/6;
     if(diemtb >= 8.5){
         document.write("Xếp loại GIỎI")
     }else if (diemtb >= 6.5) {

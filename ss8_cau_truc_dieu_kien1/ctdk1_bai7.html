@@ -7,19 +7,19 @@
 <body>
 <!--Bài 7: Tính cước điện thoại cho một hộ gia đình dựa trên các thông số được cung cấp.-->
 <script>
-    let sphut = prompt("Nhập số phút gọi trong tháng: ")
-    let cdinh = 25000;
-    let cphi = cdinh;
+    let soPhut = prompt("Nhập số phút gọi trong tháng: ")
+    let coDinh = 25000;
+    let chiPhi = coDinh;
 
-    if (sphut > 200) {
-        cphi += (sphut - 200) * 800 + 50 * 1000 + 150 * 1200;
-    } else if (sphut > 150) {
-        cphi += (sphut - 150) * 1000 + 150 * 1200;
+    if (soPhut > 200) {
+        chiPhi += (soPhut - 200) * 800 + 50 * 1000 + 150 * 1200;
+    } else if (soPhut > 150) {
+        chiPhi += (soPhut - 150) * 1000 + 150 * 1200;
     } else {
-        cphi += sphut * 1200;
+        chiPhi += soPhut * 1200;
     }
 
-    document.write("Tổng cước điện thoại: " + cphi.toLocaleString() + " VNĐ");
+    document.write("Tổng cước điện thoại: " + chiPhi.toLocaleString() + " VNĐ");
 </script>
 </body>
 </html>

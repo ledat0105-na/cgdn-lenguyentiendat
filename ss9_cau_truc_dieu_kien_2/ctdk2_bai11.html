@@ -1,15 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>ctdk2_bai11</title>
+  <meta charset="UTF-8">
+  <title>ctdk2_bai11</title>
 </head>
 <body>
-<!--Bài 11: Viết chương trình tính thuế thu nhập cá nhân.-->
 <script>
-  let x = prompt("Nhập tiền thuế thu nhập cá nhân ")
+  let thuNhap = prompt("Nhập tổng thu nhập (triệu VNĐ):");
+  let soNguoiPhuThuoc = prompt("Nhập số người phụ thuộc:");
+  let tienThuNhapChiuThue = thuNhap - 11 - (4.4 * soNguoiPhuThuoc); // Tính thu nhập chịu thuế
+  let thue = 0; // Biến lưu thuế phải nộp
 
+  if (tienThuNhapChiuThue <= 0) {
+    thue = 0;
+  } else if (tienThuNhapChiuThue <= 5) {
+    thue = 0.05 * tienThuNhapChiuThue;
+  } else if (tienThuNhapChiuThue <= 10) {
+    thue = 0.1 * tienThuNhapChiuThue - 0.25;
+  } else if (tienThuNhapChiuThue <= 18) {
+    thue = 0.15 * tienThuNhapChiuThue - 0.75;
+  } else if (tienThuNhapChiuThue <= 32) {
+    thue = 0.2 * tienThuNhapChiuThue - 1.65;
+  } else if (tienThuNhapChiuThue <= 52) {
+    thue = 0.25 * tienThuNhapChiuThue - 3.25;
+  } else if (tienThuNhapChiuThue <= 80) {
+    thue = 0.3 * tienThuNhapChiuThue - 5.85;
+  } else {
+    thue = 0.35 * tienThuNhapChiuThue - 9.85;
+  }
 
+  document.write("Thu nhập chịu thuế: " + tienThuNhapChiuThue.toFixed(2) + " triệu VNĐ<br>");
+  document.write("Thuế phải nộp: " + thue.toFixed(2) + " triệu VNĐ");
 </script>
 </body>
 </html>

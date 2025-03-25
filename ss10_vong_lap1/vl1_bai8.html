@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Game đoán số</title>
+</head>
+
+<body>
+<button onclick="choiGame()">Chơi</button>
+
+<script>
+        let min = parseInt(prompt("Nhập giá trị nhỏ nhất:"));
+        let max = parseInt(prompt("Nhập giá trị lớn nhất:"));
+
+        if (min >= max) {
+            alert("Vui lòng nhập khoảng hợp lệ!");
+        }
+
+
+        let soNgauNhien = Math.floor(Math.random() * (max - min + 1)) + min;
+        let doan;
+        
+        while (true) {
+            doan = parseInt(prompt(`Hãy đoán một số trong khoảng ${min} đến ${max}:`));
+
+            if (isNaN(doan)) {
+                alert("Vui lòng nhập một số hợp lệ!");
+                continue;
+            }
+
+            if (doan === soNgauNhien) {
+                alert("Chúc mừng! Bạn đã đoán đúng!");
+                break;
+            } else if (doan < soNgauNhien) {
+                alert("Số bạn đoán bé hơn!");
+            } else {
+                alert("Số bạn đoán lớn hơn!");
+            }
+        }
+</script>
+</body>
+
+</html>

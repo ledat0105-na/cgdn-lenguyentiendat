@@ -10,19 +10,19 @@
 <!--Điểm thi giữa kỳ.-->
 <!--Điểm thi cuối kỳ.-->
 <script>
-    let diemKiemTra = prompt("Nhập điểm bài kiểm tra: ")
-    let diemGiuaKy = prompt("Nhập điểm thi giữa kỳ: ")
-    let diemCuoiKy = prompt("Nhập điểm thi cuối kỳ: ")
+    let diemKiemTra = prompt("Nhập điểm bài kiểm tra: ");
+    let diemGiuaKy = prompt("Nhập điểm thi giữa kỳ: ");
+    let diemCuoiKy = prompt("Nhập điểm thi cuối kỳ: ");
 
-    let diemtb = ((diemKiemTra) + (diemgk * 2) + (diemCuoiKy * 3))/6;
+    let diemtb = ((diemKiemTra) + (diemGiuaKy * 2) + (diemCuoiKy * 3))/6;
     if(diemtb >= 8.5){
-        document.write("Xếp loại GIỎI")
+        document.write("Xếp loại GIỎI");
     }else if (diemtb >= 6.5) {
-        document.write("Xếp loại KHÁ")
+        document.write("Xếp loại KHÁ");
     }else if (diemtb >= 5) {
-        document.write("Xếp loại TRUNG BÌNH")
+        document.write("Xếp loại TRUNG BÌNH");
     }else {
-        document.write("Xếp loại YẾU")
+        document.write("Xếp loại YẾU");
     }
 </script>
 </body>

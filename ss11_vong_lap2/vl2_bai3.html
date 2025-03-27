@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vòng lặp 2 - Bài 3</title>
+</head>
+<body>
+<script>
+    let tamGiac;
+
+    do {
+        tamGiac = parseInt(prompt("Nhập một số x để in ra tam giác trong khoảng [1;10]:"));
+    } while (tamGiac < 1 || tamGiac > 10);
+
+    //1. Tam giác xuôi
+    for (let line = 1; line <= tamGiac; line++) {
+        for (let clm = 1; clm <= line; clm++) {
+            document.writeln(" * ");
+        }
+        document.write("<br>");
+    }
+     document.write("<br>");
+    //2. Tam giác ngược
+    for (let line = tamGiac; line >= 1; line--) {
+        for (let clm = 1; clm <= line; clm++) {
+            document.writeln(" * ");
+        }
+        document.write("<br>");
+    }
+</script>
+</body>
+</html>

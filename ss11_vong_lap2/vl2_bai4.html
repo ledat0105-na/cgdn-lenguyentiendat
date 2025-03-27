@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vòng lặp 2 - bài 4</title>
+</head>
+<body>
+<script>
+  let chieuDai, chieuRong;
+
+  do {
+    chieuDai = parseInt(prompt("Nhập chiều dài (>=3):"));
+    chieuRong = parseInt(prompt("Nhập chiều rộng (>=3):"));
+  } while (chieuDai < 3 || chieuRong < 3);
+
+  for (let i = 1; i <= chieuRong; i++) {
+    for (let j = 1; j <= chieuDai; j++) {
+      if (i === 1 || i === chieuRong || j === 1 || j === chieuDai) {
+        document.write("*");
+      } else {
+        document.write("&nbsp;&nbsp;");
+      }
+    }
+    document.write("<br>");
+  }
+</script>
+
+</body>
+</html>

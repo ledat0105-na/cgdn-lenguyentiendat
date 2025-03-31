@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sử dụng các hàm có sẵn ở mảng</title>
+</head>
+
+<body>
+<!-- Bài 1: Nối các phần tử trong mảng thành chuỗi -->
+<script>
+  let students = ["Lê", "Nguyễn", "Tiến", "Đạt", "Lớp", "Jv03"];
+  document.writeln("Các chuỗi nối lại thành 1 chuỗi là: " + students.join(","));
+  document.writeln("<br><br><br>");
+
+  // Bài 2: Chèn dấu "-" giữa các số chẵn
+  let inputNumbers = prompt("Nhập vào một chuỗi số: ");
+  let resultNumbers = inputNumbers[0];
+
+  for (let i = 1; i < inputNumbers.length; i++) {
+    if (inputNumbers[i - 1] % 2 === 0 && inputNumbers[i] % 2 === 0) {
+      resultNumbers += "-";
+    }
+    resultNumbers += inputNumbers[i];
+  }
+  document.writeln("Chuỗi sau khi chèn dấu "-" là: " + resultNumbers);
+  document.writeln("<br><br><br>");
+
+  // Bài 3: Chuyển đổi chữ thường sang chữ hoa và ngược lại
+  let inputText = prompt("Nhập vào một chuỗi:");
+  let resultText = "";
+
+  for (let i = 0; i < inputText.length; i++) {
+    let char = inputText[i];
+    if (char === char.toUpperCase()) {
+      resultText += char.toLowerCase();
+    } else {
+      resultText += char.toUpperCase();
+    }
+  }
+
+  document.writeln("Chuỗi sau khi chuyển đổi là: " + resultText);
+</script>
+</body>
+
+</html>

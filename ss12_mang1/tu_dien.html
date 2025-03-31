@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển Anh - Việt</title>
+</head>
+<body>
+<h2>Từ điển Anh - Việt</h2>
+<label for="wordInput">Nhập từ tiếng Anh:</label>
+<input type="text" name="" id="wordInput" placeholder="Nhập từ cần tìm kiếm">
+<button onclick="translateWord()">Dịch</button>
+<script>
+    let tiengAnh = ["Apple", "Chicken", "Banana", "Dog", "Cat", "Duck", "Egg", "Fruit", "Grape"];
+    let tiengViet = ["Quả táo", "Gà", "Chuối", "Chó", "Mèo", "Vịt", "Trứng", "Trái cây", "Nho"]
+
+    function translateWord() {
+        let inputWord = document.getElementById("wordInput").value.toLowerCase();
+        let result = "Không tìm thấy.";
+
+    for (let i = 0; i < tiengAnh.length; i++) {
+        if (tiengAnh[i] === inputWord) {
+            result = "Nghĩa tiếng Việt của từ '" + inputWord + "' là: " + tiengViet[i];
+            break;
+        }
+    }
+
+    document.write(result);
+    }
+</script>
+</body>
+</html>

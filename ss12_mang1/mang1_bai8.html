@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mảng 1 - Bài 8</title>
+</head>
+
+<body>
+<!--Bài 8 Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên gồm 10 phần tử. -->
+<!--Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị mảng đã được sắp xếp.-->
+<script>
+    let input = prompt("Nhập 10 số nguyên, cách nhau bằng dấu phẩy:");
+    let numbers = input.split(",").map(Number);
+
+    document.writeln("Mảng ban đầu: " + numbers.join(", "));
+
+    for (let i = 0; i < numbers.length; i++) {
+        for (let j = i + 1; j < numbers.length; j++) {
+            if (numbers[i] < numbers[j]) {
+                let temp = numbers[i];
+                numbers[i] = numbers[j];
+                numbers[j] = temp;
+            }
+        }
+    }
+    document.writeln("<br>Mảng sau khi sắp xếp giảm dần: " + numbers.join(", "));
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mảng 1 - Bài 1</title>
+</head>
+
+<body>
+<!-- Bài 1: Hiển thị các số nguyên >= 10 và số lượng -->
+<script>
+  let numbers = [5, 20, 36, 8, 7, 46, 55, 89, 76, 45];
+  let count = [];
+
+  document.writeln("Các số nguyên lớn hơn hoặc bằng 10 là: ");
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] >= 10) {
+    count.push(numbers[i]);
+    }
+  }
+
+  document.writeln("<br>Số lượng phần tử lớn hơn hoặc bằng 10 là: " + count);
+</script>
+</body>
+
+</html>

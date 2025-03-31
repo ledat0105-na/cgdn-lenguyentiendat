@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mảng 1 - bài 9</title>
+</head>
+<body>
+<!--Viết chương trình khởi tạo hoặc nhập vào hai mảng số nguyên gồm 10 phần tử (gọi là mảng a và b).-->
+<!--Tạo mảng c gồm 20 phần tử.-->
+<!--Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c. => Hiển thị mảng c.-->
+<!-- Bài 9: Nối hai mảng số nguyên vào một mảng mới -->
+<script>
+  let inputA = prompt("Nhập 10 số nguyên cho mảng A, cách nhau bằng dấu phẩy:");
+  let inputB = prompt("Nhập 10 số nguyên cho mảng B, cách nhau bằng dấu phẩy:");
+
+  let a = inputA.split(",").map(Number);
+  let b = inputB.split(",").map(Number);
+
+  let c = b.concat(a); // Nối mảng b trước rồi đến mảng a
+
+  document.writeln("Mảng A: " + a.join(", "));
+  document.writeln("<br>Mảng B: " + b.join(", "));
+  document.writeln("<br>Mảng C (Nối từ B và A): " + c.join(", "));
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mảng 1 - bài 5</title>
+</head>
+<body>
+<!--Bài 5 Viết chương trình đếm số nguyên âm trong một chuỗi.-->
+<script>
+  let input = prompt("Nhập các số âm, cách nhau bằng dấu phẩy:");
+  let numbers = input.split(",");
+
+  document.writeln("Mảng số âm ban đầu: " + numbers.join(", "));
+
+  let count = 0;
+  for (let i = 0; i <numbers.length; i++) {
+   if (numbers[i] < 0) {
+     count++;
+   }
+  }
+  document.writeln("<br>Số lượng số nguyên âm trong mảng: " + count);
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mảng 2 - bài 5</title>
+</head>
+<body>
+<!--Bài 5: Viết chương trình nhập vào 2 chuỗi, kiểm tra xem hai chuỗi có giống nhau không.-->
+<script>
+    let chuoiSo1 = prompt("Nhập vào chuỗi thứ nhất");
+    let chuoiSo2 = prompt("Nhập vào chuỗi thứ hai");
+
+    // So sánh hai chuỗi
+    if (chuoiSo1 === chuoiSo2) {
+        document.write("Hai chuỗi giống nhau");
+    } else {
+        document.write("Hai chuỗi khác nhau");
+        document.write("<br>");
+        document.write("Chuỗi thứ nhất: " + chuoiSo1);
+        document.write("<br>");
+        document.write("Chuỗi thứ hai: " + chuoiSo2);
+
+        if (chuoiSo1.length !== chuoiSo2.length) {
+            document.write("<br>");
+            document.write("Độ dài khác nhau: ");
+            document.write("<br>");
+            document.write("Chuỗi 1 có " + chuoiSo1.length + " ký tự");
+            document.write("<br>");
+            document.write("Chuỗi 2 có " + chuoiSo2.length + " ký tự");
+        } else {
+            document.write("<br>");
+            document.write("Hai chuỗi có cùng độ dài (" + chuoiSo1.length + " ký tự) nhưng nội dung khác nhau");
+        }
+    }
+</script>
+</body>
+</html>

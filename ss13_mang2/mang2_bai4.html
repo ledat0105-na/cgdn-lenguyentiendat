@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mảng 2 - bài 4</title>
+</head>
+<body>
+<!--Bài 4: Viết chương trình đếm số từ trong một chuỗi.-->
+<script>
+    let input = prompt("Nhập vào một chuỗi")
+    let chuoi = "le nguyen tien dat";
+    let a = chuoi.split(" ");
+    let count = 0;
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] != null) {
+            count++;
+        }
+    }
+    document.write("Số từ trong chuỗi là: " + count)
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi từ feet sang meters</title>
+</head>
+<body>
+<script>
+    let foot = prompt("Nhập số feet: ");
+    let meter = prompt("Nhập số meters: ");
+
+    function footToMeter(foot) {
+        return 0.305 * foot;
+    }
+
+    function meterToFoot(meter) {
+        return 3.279 * meter;
+    }
+
+    document.writeln(`${foot} feet = ${footToMeter(foot).toFixed(3)} meters <br>`);
+    document.writeln(`${meter} meters = ${meterToFoot(meter).toFixed(3)} feet`);
+</script>
+</body>
+</html>

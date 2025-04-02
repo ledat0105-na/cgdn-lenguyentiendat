@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính bình phương</title>
+</head>
+<body>
+<!--Tính bình phương: Viết hàm tính bình phương của một số bất kỳ được đưa vào.-->
+<!--Gọi và kiểm tra hàm vừa viết.-->
+<script>
+    let soNhap = parseFloat(prompt("Nhập vào một số bất kỳ: "))
+
+    function binhPhuong(a) {
+        return a * a;
+    }
+
+    let ketQua = binhPhuong(soNhap);
+    document.write("Bình phương của " + soNhap + " là " + ketQua);
+</script>
+</body>
+</html>

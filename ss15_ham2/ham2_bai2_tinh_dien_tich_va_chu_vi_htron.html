@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính diện tích và chu vi hình tròn</title>
+</head>
+<body>
+<script>
+    function tinhDienTich(r) {
+        return Math.PI * r * r;
+    }
+
+    function tinhChuVi(r) {
+        return 2 * Math.PI * r;
+    }
+
+    let nhapBanKinh = parseFloat(prompt("Nhập bán kính hình tròn: "));
+
+    if (nhapBanKinh > 0) {
+        let dienTich = tinhDienTich(nhapBanKinh);
+        let chuVi = tinhChuVi(nhapBanKinh);
+
+        document.writeln("Diện tích hình tròn: " + dienTich.toFixed(2) + "<br>");
+        document.writeln("Chu vi hình tròn: " + chuVi.toFixed(2));
+    } else {
+        document.writeln("Bán kính phải lớn hơn 0.");
+    }
+</script>
+</body>
+</html>

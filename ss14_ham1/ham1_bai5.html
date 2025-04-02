@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm 1 - Bài 5</title>
+</head>
+<body>
+<!--Bài 5: Tạo một mảng gồm bảy phần tử dạng chuỗi, chứa tên các ngôi sao:-->
+<!--Polaris, Aldebaran, Deneb, Vega, Altair, Dubhe, Regulus.-->
+
+<!--Tạo một mảng khác gồm bảy phần tử dạng chuỗi, chứa tên các chòm sao tương ứng:-->
+<!--Ursa Minor, Taurus, Cygnus, Lyra, Aquila, Ursa Major, Leo.-->
+
+<!--Tạo một hàm nhận vào một tham số dạng chuỗi. Trong hàm, duyệt qua mảng đầu tiên để tìm tên ngôi sao. -->
+<!--Nếu tìm thấy, trả lại tên chòm sao tương ứng từ mảng thứ hai.-->
+
+<!--Trong phần <body> của trang web, sử dụng hộp thoại prompt để người dùng nhập tên ngôi sao,
+ sau đó gọi hàm với thông tin đầu vào.-->
+<!--Yêu cầu:-->
+<!--Nếu tìm thấy ngôi sao, hiển thị tên chòm sao trên màn hình.-->
+<!--Nếu không tìm thấy, xử lý và hiển thị thông báo phù hợp-->
+<script>
+    let nhapTenNgoiSao = prompt("Nhập tên ngôi sao: ")
+
+    let array1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let array2 = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+    function thamSoChuoi(ngoiSao) {
+        let index = array1.indexOf(ngoiSao);
+        if (index !== -1) {
+            return "Ngôi sao " + ngoiSao + " thuộc chòm sao " + array2[index] + ".";
+        } else {
+            return "Không tìm thấy ngôi sao này.";
+        }
+    }
+
+    let result = thamSoChuoi(nhapTenNgoiSao);
+    document.writeln(result);
+</script>
+</body>
+</html>

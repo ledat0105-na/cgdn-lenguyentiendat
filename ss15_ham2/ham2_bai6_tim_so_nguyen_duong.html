@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số nguyên dương</title>
+</head>
+<body>
+<!--Kiểm tra số nguyên dương: Viết hàm nhận vào một số, kiểm tra xem số đó có phải là số nguyên dương không. -->
+<!--Nếu là nguyên dương, trả về true; ngược lại trả về false.-->
+<script>
+    function soNguyenDuong(n) {
+        if (Number.isInteger(n)) {
+            if (n > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    let nhapSoNguyenDuong = parseFloat(prompt("Nhập số nguyên dương: "));
+    if (soNguyenDuong(nhapSoNguyenDuong)) {
+        document.writeln(nhapSoNguyenDuong + " là số nguyên dương.");
+    } else {
+        document.writeln(nhapSoNguyenDuong + " không phải là số nguyên dương.");
+    }
+
+</script>
+</body>
+</html>

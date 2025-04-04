@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi chỗ hai số nguyên</title>
+</head>
+<body>
+<!--Đổi chỗ hai số nguyên: Viết hàm truyền vào 2 số nguyên bất kỳ và thực hiện đổi chỗ hai số đó.-->
+<script>
+    function doiChoHaiSo(a, b) {
+        let temp = a;
+        a = b;
+        b = temp;
+        return [a, b];
+    }
+
+    let so1 = parseInt(prompt("Nhập số nguyên thứ nhất:"));
+    let so2 = parseInt(prompt("Nhập số nguyên thứ hai:"));
+    document.writeln("Trước khi đổi: số thứ nhất là: " + so1 + ", số thứ hai là: " + so2 + "<br>");
+
+    let ketQua = doiChoHaiSo(so1, so2);
+    document.writeln("Sau khi đổi: số thứ nhất là: " + ketQua[0] + ", số thứ hai là: " + ketQua[1]);
+</script>
+</body>
+</html>

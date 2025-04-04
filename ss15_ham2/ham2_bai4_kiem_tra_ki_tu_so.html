@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra ký tự số</title>
+</head>
+<body>
+<!--Kiểm tra ký tự số: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số hay không.-->
+<!--Nếu là ký tự số, hàm trả về true; ngược lại trả về false.-->
+<script>
+    function kyTuSo(n) {
+        return n >= '0' && n <= '9';
+    }
+
+    let nhapKyTu = prompt("Nhập ký tự số: ");
+    if (kyTuSo(nhapKyTu)) {
+        document.writeln("Ký tự '" + nhapKyTu + "' là ký tự số.");
+    } else {
+        document.writeln("Ký tự '" + nhapKyTu + "' không phải là ký tự số.");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giai thừa</title>
+</head>
+<body>
+<!--Tính giai thừa: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào.-->
+<!--Gọi và kiểm tra hàm vừa viết.-->
+<script>
+    function giaiThua(n) {
+        let ketQua = 1;
+        for (let i = 1; i <= n; i++) {
+            ketQua *= i;
+        }
+        return ketQua;
+    }
+    let soNhapVao = parseInt(prompt("Nhập số nguyên bất kỳ: "));
+
+    if (soNhapVao >= 0) {
+        let ketQua = giaiThua(soNhapVao);
+        document.writeln(soNhapVao + "! =" + ketQua);
+    } else {
+        document.writeln("Vui lòng nhập số nguyên không âm")
+    }
+</script>
+</body>
+</html>

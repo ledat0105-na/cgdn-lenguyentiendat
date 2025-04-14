@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Công tắc và Bóng đèn</title>
+</head>
+<body>
+
+<script>
+  // Lớp ElectricLamp
+  class ElectricLamp {
+    constructor() {
+      this.status = false;
+    }
+
+    turnOn() {
+      this.status = true;
+      alert("Bóng đèn: BẬT");
+    }
+
+    turnOff() {
+      this.status = false;
+      alert("Bóng đèn: TẮT");
+    }
+  }
+
+  // Lớp SwitchButton
+  class SwitchButton {
+    constructor() {
+      this.status = false;
+      this.lamp = null;
+    }
+
+    connectToLamp(electricLamp) {
+      this.lamp = electricLamp;
+    }
+
+    switchOn() {
+      this.status = true;
+      if (this.lamp) {
+        this.lamp.turnOn();
+      }
+    }
+
+    switchOff() {
+      this.status = false;
+      if (this.lamp) {
+        this.lamp.turnOff();
+      }
+    }
+  }
+
+  // === Kịch bản chính ===
+  let lamp = new ElectricLamp();
+  let button = new SwitchButton();
+
+  let countOn = 0;
+  let countOff = 0;
+
+  button.connectToLamp(lamp);
+
+  for (let i = 1; i <= 5; i++) {
+    alert(`Lặp lại lần ${i}`);
+    if (i % 2 === 0) {
+      button.switchOff();
+      countOff++;
+    } else {
+      button.switchOn();
+      countOn++;
+    }
+  }
+
+  // In ra thống kê sau vòng lặp
+  document.writeln(`<h2>Kết quả sau khi lặp:</h2>`);
+  document.writeln(`<p>Số lần bật bóng đèn: <strong>${countOn}</strong></p>`);
+  document.writeln(`<p>Số lần tắt bóng đèn: <strong>${countOff}</strong></p>`);
+  document.writeln(`<p>Tổng số lần lặp: <strong>${countOn + countOff}</strong></p>`);
+</script>
+
+</body>
+</html>

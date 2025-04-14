@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Rectangle Class</title>
+</head>
+<body>
+<h2>Vẽ hình chữ nhật bằng lớp Rectangle</h2>
+<canvas id="myCanvas" width="400" height="300" style="border:1px solid black;"></canvas>
+<p id="info"></p>
+
+<script>
+  // Khai báo lớp Rectangle
+  class Rectangle {
+    constructor(length, width) {
+      this.length = length;
+      this.width = width;
+    }
+
+    getArea() {
+      return this.length * this.width;
+    }
+
+    getPerimeter() {
+      return 2 * (this.length + this.width);
+    }
+
+    draw(context, x, y) {
+      context.beginPath();
+      context.rect(x, y, this.length, this.width);
+      context.stroke();
+      context.fillStyle = "#ADD8E6";
+      context.fill();
+    }
+  }
+
+  let rect = new Rectangle(250, 100);
+
+  // Lấy đối tượng canvas và context để vẽ
+  let canvas = document.getElementById("myCanvas");
+  let ctx = canvas.getContext("2d");
+
+  rect.draw(ctx, 50, 50);
+
+  let info = document.getElementById("info");
+  info.innerHTML =
+          "Chiều dài: " + rect.length + "<br>" +
+          "Chiều rộng: " + rect.width + "<br>" +
+          "Diện tích: " + rect.getArea() + "<br>" +
+          "Chu vi: " + rect.getPerimeter();
+</script>
+</body>
+</html>

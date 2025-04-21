@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cho nhập vào mảng A,B</title>
+</head>
+<body>
+<script>
+    let inputA = prompt("Nhập các số trong mảng A, cách nhau bằng dấu phẩy: ");
+    let inputB = prompt("Nhập các số trong mảng B, cách nhau bằng dấu phẩy: ");
+
+    // Chuyển chuỗi nhập vào thành mảng và loại bỏ phần tử trùng lặp
+    let A = inputA.split(',').map(Number);
+    let B = inputB.split(',').map(Number);
+
+    let setA = [...new Set(A)];
+    let setB = [...new Set(B)];
+    let result = [];
+
+    // Tìm các phần tử trong B nhưng không có trong A
+    for (let i = 0; i < setB.length; i++) {
+        if (!setA.includes(setB[i])) {
+            result.push(setB[i]);
+        }
+    }
+
+    // Sắp xếp kết quả
+    result.sort((a, b) => a - b);
+
+    alert("Kết quả: " + result);
+</script>
+</body>
+</html>

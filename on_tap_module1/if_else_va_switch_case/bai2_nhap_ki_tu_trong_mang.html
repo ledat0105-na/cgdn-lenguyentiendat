@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập ký tự trong mảng</title>
+</head>
+<body>
+<!--Bài 2: Viết chương trình kiểm tra một ký tự trong bảng chữ cái tiếng anh là nguyên âm hay phụ âm. -->
+<!--Ký tự là bất kỳ được nhập từ bàn phím. -->
+<!--Các ký tự nguyên âm bao gồm: 'o', 'u', 'i', 'a', 'e' hoặc 'O', 'U', 'I', 'A', 'E'-->
+<script>
+  let kyTu = prompt("Nhập ký tự bất kỳ vào đây: ")
+  const nguyenAm = ['o', 'u', 'i', 'a', 'e','O', 'U', 'I', 'A', 'E'];
+  if (kyTu && kyTu.length === 1 && /[a-zA-Z]/.test(kyTu)) {
+      if (nguyenAm.includes(kyTu)) {
+          document.writeln(`Ký tự "${kyTu}" là nguyên âm.`);
+      } else {
+          document.writeln(`Ký tự "${kyTu}" là phụ âm.`);
+      }
+  } else {
+      document.writeln("Vui lòng nhập một ký tự chữ cái hợp lệ (a-z hoặc A-Z).");
+  }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính số lương nhân viên</title>
+</head>
+<body>
+<script>
+    // Nhập lương từ người dùng
+    let luongNhanVien = parseFloat(prompt("Nhập số lương nhân viên (VND):"));
+
+    // Hàm tính lương
+    function tinhLuong(luong) {
+        let thue = 0;
+        if (luong >= 15000000) {
+            thue = luong * 0.2;
+        } else if (luong >= 7000000) {
+            thue = luong * 0.1;
+        } else {
+            thue = luong * 0.05;
+        }
+
+        let luongRong = luong - thue;
+
+        document.writeln(`Lương gốc: ${luong.toLocaleString()} VND<br>`);
+        document.writeln(`Thuế thu nhập: ${thue.toLocaleString()} VND<br>`);
+        document.writeln(`Lương ròng: ${luongRong.toLocaleString()} VND<br>`);
+    }
+
+    // Kiểm tra và gọi hàm
+    if (!isNaN(luongNhanVien) && luongNhanVien > 0) {
+        tinhLuong(luongNhanVien);
+    } else {
+        document.writeln("Vui lòng nhập một số lương hợp lệ.");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vẽ tam giác cân</title>
+</head>
+<body>
+<script>
+    let h = prompt("Nhập chiều cao của tam giác cân: ")
+    if (!isNaN(h) && h > 0) {
+        for (i = 1; i <= h; i++) {
+            let row = "";
+            for (j = 1; j <= h - i; j++) {
+                row += "&nbsp; &nbsp;";
+            }
+            for (let k = 1; k <= 2 * i - 1; k++) {
+                row += " *";
+            }
+            document.write(row + "<br>");
+        }
+    } else {
+        alert("Nhập lại số nguyên dương hợp lệ")
+        document.write("Nhập lại số nguyên dương hợp lệ")
+    }
+</script>
+</body>
+</html>

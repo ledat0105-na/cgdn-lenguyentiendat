@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vẽ tam giác vuông cân rỗng</title>
+</head>
+<body>
+<script>
+  let h = parseInt(prompt("Nhập chiều cao tam giác:"));
+
+  if (!isNaN(h) && h > 0) {
+    for (let i = 1; i <= h; i++) {
+      let row = "";
+      for (let j = 1; j <= i; j++) {
+        if (i === h || j === 1 || j === i) {
+          row += "* ";
+        } else {
+          row += "&nbsp; &nbsp;";
+        }
+      }
+      document.write(row + "<br>");
+    }
+  } else {
+    alert("Vui lòng nhập một số nguyên dương hợp lệ.");
+    document.writeln("Vui lòng nhập một số nguyên dương hợp lệ.");
+  }
+</script>
+</body>
+</html>

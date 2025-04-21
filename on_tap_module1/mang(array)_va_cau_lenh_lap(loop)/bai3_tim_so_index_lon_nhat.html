@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tìm chỉ số index lớn nhất</title>
+</head>
+<body>
+<script>
+  let tuSoInput = prompt("Nhập các tử số, cách nhau bằng các dấu phẩy: ");
+  let mauSoInput = prompt("Nhập các mẫu số, cách nhau bằng các dấu phẩy: ");
+
+  // Chuyển thành mảng số
+  let tuSo = tuSoInput.split(',').map(Number);
+  let mauSo = mauSoInput.split(',').map(Number);
+
+  let index = -1;
+  let phanSoMax = -Infinity;
+
+  // Duyệt mảng để tìm phân số lớn nhất
+  for (let i = 0; i < tuSo.length; i++) {
+    let phanSo = tuSo[i] / mauSo[i];
+    if (phanSo > phanSoMax) {
+      phanSoMax = phanSo;
+      index = i;
+    }
+  }
+
+  alert("Chỉ số phân số lớn nhất là: " + index);
+</script>
+</body>
+</html>

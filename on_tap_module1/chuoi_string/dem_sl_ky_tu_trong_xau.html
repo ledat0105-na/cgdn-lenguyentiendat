@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm chuỗi ký tự trong xâu</title>
+</head>
+<body>
+<script>
+  function differentSymbolsNaive(s){
+    let kitu = new Set(s);
+    return kitu.size
+  }
+  let nhapKyTu = prompt("Nhập số ký tự khác nhau vào đây: ")
+
+  differentSymbolsNaive(nhapKyTu);
+  alert(`Ký tự ban đầu là: ${nhapKyTu}`);
+  alert(`Ký tự đã đếm được là: ${differentSymbolsNaive(nhapKyTu)}`)
+</script>
+</body>
+</html>

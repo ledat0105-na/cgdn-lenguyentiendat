@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản lý Học viên CODEGYM</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Quản lý Học viên CODEGYM</h2>
+
+<table id="studentTable">
+  <thead>
+  <tr>
+    <th>Mã học viên</th>
+    <th>Tên</th>
+    <th>Lớp</th>
+    <th>Email</th>
+    <th>Ngày sinh</th>
+  </tr>
+  </thead>
+  <tbody id="studentList">
+  </tbody>
+</table>
+
+<br>
+
+<button onclick="themHocVien()">Thêm học viên</button>
+<button onclick="suaHocVien()">Sửa học viên</button>
+<button onclick="xoaHocVien()">Xóa học viên</button>
+
+<script>
+  class HocVien {
+    constructor(maHocVien, ten, lop, email, ngaySinh) {
+      this.maHocVien = maHocVien;
+      this.ten = ten;
+      this.lop = lop;
+      this.email = email;
+      this.ngaySinh = ngaySinh;
+    }
+  }
+
+  class QuanLyHocVien {
+    constructor() {
+      this.danhSachHocVien = [];
+    }
+
+    themHocVien(maHocVien, ten, lop, email, ngaySinh) {
+      let hocVienMoi = new HocVien(maHocVien, ten, lop, email, ngaySinh);
+      this.danhSachHocVien.push(hocVienMoi);
+    }
+
+    suaHocVien(maHocVien, ten, lop, email, ngaySinh) {
+      let hocVien = this.danhSachHocVien.find(hv => hv.maHocVien === maHocVien);
+      if (hocVien) {
+        hocVien.ten = ten;
+        hocVien.lop = lop;
+        hocVien.email = email;
+        hocVien.ngaySinh = ngaySinh;
+        return true;
+      }
+      return false;
+    }
+
+    xoaHocVien(maHocVien) {
+      let index = this.danhSachHocVien.findIndex(hv => hv.maHocVien === maHocVien);
+      if (index !== -1) {
+        this.danhSachHocVien.splice(index, 1);
+        return true;
+      }
+      return false;
+    }
+
+    hienThiDanhSachHocVien() {
+      let studentList = document.getElementById("studentList");
+      studentList.innerHTML = '';
+      this.danhSachHocVien.forEach(hv => {
+        let row = `<tr>
+                            <td>${hv.maHocVien}</td>
+                            <td>${hv.ten}</td>
+                            <td>${hv.lop}</td>
+                            <td>${hv.email}</td>
+                            <td>${hv.ngaySinh}</td>
+                          </tr>`;
+        studentList.innerHTML += row;
+      });
+    }
+  }
+
+  // Khởi tạo đối tượng quản lý học viên
+  let quanLyHocVien = new QuanLyHocVien();
+
+  quanLyHocVien.hienThiDanhSachHocVien();
+
+  function themHocVien() {
+    let maHocVien = prompt("Nhập mã học viên (HV-XXXX):");
+    let ten = prompt("Nhập tên học viên:");
+
+    let lop = prompt("Nhập lớp học:");
+    let email = prompt("Nhập email:");
+    let ngaySinh = prompt("Nhập ngày sinh (dd/mm/yyyy):");
+
+    quanLyHocVien.themHocVien(maHocVien, ten, lop, email, ngaySinh);
+    quanLyHocVien.hienThiDanhSachHocVien();
+  }
+
+  function suaHocVien() {
+    let maHocVien = prompt("Nhập mã học viên cần sửa:");
+    let hocVien = quanLyHocVien.danhSachHocVien.find(hv => hv.maHocVien === maHocVien);
+    if (hocVien) {
+      let ten = prompt("Nhập tên học viên mới:", hocVien.ten);
+
+      let lop = prompt("Nhập lớp học mới:", hocVien.lop);
+      let email = prompt("Nhập email mới:", hocVien.email);
+      let ngaySinh = prompt("Nhập ngày sinh mới:", hocVien.ngaySinh);
+
+      quanLyHocVien.suaHocVien(maHocVien, ten, lop, email, ngaySinh);
+      quanLyHocVien.hienThiDanhSachHocVien();
+    } else {
+      alert("Mã học viên không tồn tại.");
+    }
+  }
+
+  function xoaHocVien() {
+    let maHocVien = prompt("Nhập mã học viên cần xóa:");
+    if (quanLyHocVien.xoaHocVien(maHocVien)) {
+      alert("Học viên đã được xóa.");
+      quanLyHocVien.hienThiDanhSachHocVien();
+    } else {
+      alert("Mã học viên không tồn tại.");
+    }
+  }
+</script>
+
+</body>
+</html>

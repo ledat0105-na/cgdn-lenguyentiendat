@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Table</title>
+    <style>
+        #bangDonHang {
+            display: none; /* Ẩn bảng đơn hàng ban đầu */
+        }
+    </style>
+</head>
+<body>
+<table border="1" id="bangOrder">
+    <tr>
+        <th>STT</th>
+        <th>Sản phẩm</th>
+        <th>Chọn món</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Cafe</td>
+        <td><button onclick="chonMon(1, 'Cafe')">Chọn</button></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Cam vắt</td>
+        <td><button onclick="chonMon(2, 'Cam vắt')">Chọn</button></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Nước ép cà rốt</td>
+        <td><button onclick="chonMon(3, 'Nước ép cà rốt')">Chọn</button></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Nước ép cà chua</td>
+        <td><button onclick="chonMon(4, 'Nước ép cà chua')">Chọn</button></td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Nước lọc</td>
+        <td><button onclick="chonMon(5, 'Nước lọc')">Chọn</button></td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>Nước dừa</td>
+        <td><button onclick="chonMon(6, 'Nước dừa')">Chọn</button></td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td rowspan="2"><button onclick="datHang()">Đặt hàng</button></td>
+    </tr>
+</table>
+
+<h3>Đơn hàng của bạn:</h3>
+<table border="1" id="bangDonHang">
+    <tr>
+        <th>STT</th>
+        <th>Sản phẩm</th>
+        <th>Số lượng</th>
+    </tr>
+</table>
+
+<script>
+    let danhSachMon = []; // Mảng lưu các món đã chọn
+
+    function chonMon(stt, tenMon) {
+        // Kiểm tra xem món đã có trong đơn hàng chưa
+        let monDaChon = danhSachMon.find(mon => mon.tenMon === tenMon);
+
+        if (monDaChon) {
+            // Nếu món đã có, cộng dồn số lượng
+            monDaChon.soLuong++;
+        } else {
+            // Nếu món chưa có, thêm mới với số lượng 1
+            danhSachMon.push({ stt, tenMon, soLuong: 1 });
+        }
+
+        // Hiển thị bảng đơn hàng
+        hienThiDonHang();
+    }
+
+    function hienThiDonHang() {
+        let bangDonHang = document.getElementById('bangDonHang');
+        let bangCoThe = bangDonHang.getElementsByTagName('tbody')[0];
+        if (!bangCoThe) {
+            bangCoThe = document.createElement('tbody');
+            bangDonHang.appendChild(bangCoThe);
+        }
+
+        // Xóa dữ liệu cũ trong bảng
+        bangCoThe.innerHTML = "";
+
+        // Thêm món vào bảng
+        danhSachMon.forEach(mon => {
+            let dong = bangCoThe.insertRow();
+            let cell1 = dong.insertCell(0);
+            let cell2 = dong.insertCell(1);
+            let cell3 = dong.insertCell(2);
+
+            cell1.innerText = mon.stt;
+            cell2.innerText = mon.tenMon;
+            cell3.innerText = mon.soLuong;
+        });
+
+        // Hiển thị bảng đơn hàng
+        bangDonHang.style.display = 'table';
+    }
+
+    function datHang() {
+        // Bạn có thể xử lý việc thanh toán hoặc hoàn tất đơn hàng ở đây
+        alert('Đặt hàng thành công!');
+    }
+</script>
+</body>
+</html>

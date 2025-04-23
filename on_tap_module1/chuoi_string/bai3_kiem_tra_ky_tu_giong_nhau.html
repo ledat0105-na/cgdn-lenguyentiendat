@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kiểm tra ký tự giống nhau</title>
+</head>
+<body>
+<script>
+  function commonCharacterCount(s1, s2) {
+    let arr2 = s2.split('');
+    let count = 0;
+
+    for (let i = 0; i < s1.length; i++) {
+      let char = s1[i];
+      let index = arr2.indexOf(char);
+      if (index !== -1) {
+        count++;
+        arr2.splice(index, 1); // Xóa ký tự đã đếm để tránh trùng
+      }
+    }
+    return count;
+  }
+
+  let s1 = prompt("Nhập chuỗi ký tự 1:");
+  let s2 = prompt("Nhập chuỗi ký tự 2:");
+
+  let result = commonCharacterCount(s1, s2);
+  alert(`Số ký tự chung giữa "${s1}" và "${s2}" là: ${result}`);
+</script>
+</body>
+</html>

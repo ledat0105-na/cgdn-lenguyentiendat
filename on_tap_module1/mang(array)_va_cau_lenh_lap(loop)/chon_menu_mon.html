@@ -27,7 +27,7 @@
     menuText += "7. Thoát gọi món";
 
     luaChon = parseInt(prompt(menuText));
-    
+
     if (luaChon >= 1 && luaChon <= 6) {
       let soLuong = parseInt(prompt(`Bạn đã chọn ${menu[luaChon - 1].ten}. Nhập số lượng:`));
       let thanhTien = menu[luaChon - 1].gia * soLuong;

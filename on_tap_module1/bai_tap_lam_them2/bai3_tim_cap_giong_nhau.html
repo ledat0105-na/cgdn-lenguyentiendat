@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3 - Tìm cặp có tổng bằng phần tử tiếp theo</title>
+</head>
+<body>
+<h2>Bài 3: Tìm các cặp có tổng bằng phần tử tiếp theo</h2>
+
+<label>Nhập mảng số nguyên (cách nhau bằng dấu phẩy):</label><br>
+<input type="text" id="inputArray" placeholder="VD: 1,5,6,11,9,20,8,0,8,1">
+<br>
+<button onclick="findValidPairs()">Tìm cặp</button>
+
+<div id="output"></div>
+
+<script>
+    function findValidPairs() {
+        const input = document.getElementById("inputArray").value;
+        const arr = input.split(",").map(x => Number(x.trim()));
+
+        let result = [];
+
+        for (let i = 0; i < arr.length - 2; i++) {
+            let a = arr[i];
+            let b = arr[i + 1];
+            let sum = a + b;
+
+            if (sum === arr[i + 2]) {
+                result.push([a, b]);
+            }
+        }
+
+        // Sắp xếp mảng kết quả theo tổng tăng dần
+        result.sort((x, y) => (x[0] + x[1]) - (y[0] + y[1]));
+
+        // Hiển thị kết quả
+        const outputDiv = document.getElementById("output");
+        if (result.length === 0) {
+            outputDiv.innerHTML = "Không tìm thấy cặp nào thoả mãn.";
+        } else {
+            outputDiv.innerHTML = `Các cặp hợp lệ (đã sắp xếp): <br> [ ${result.map(pair => `[${pair.join(",")}]`).join(", ")} ]`;
+        }
+    }
+</script>
+</body>
+</html>

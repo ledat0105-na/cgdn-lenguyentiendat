@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+        <html lang="vi">
+        <head>
+        <meta charset="UTF-8">
+        <title>Hệ thống quản lý bài tập</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .header {
+            background-color: #f2f2f2;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .container {
+            display: flex;
+            height: calc(100vh - 60px);
+        }
+
+        .sidebar {
+            width: 150px;
+            background-color: #eaeaea;
+            padding: 15px;
+            border-right: 1px solid #ccc;
+        }
+
+        .sidebar button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    Hệ thống quản lý bài tập Casestudy module 1
+</div>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <button onclick="loadExercise(1)">Bài tập 1</button>
+        <button onclick="loadExercise(2)">Bài tập 2</button>
+        <button onclick="loadExercise(3)">Bài tập 3</button>
+        <button onclick="loadExercise(4)">Bài tập 4</button>
+        <button onclick="loadExercise(5)">Bài tập 5</button>
+    </div>
+
+    <div class="main-content" id="exercise-content">
+        Vui lòng chọn bài tập để xem nội dung.
+    </div>
+
+</div>
+
+<script>
+    function loadExercise(num) {
+        const content = document.getElementById("exercise-content");
+        content.innerHTML = `<h3>Bài tập ${num}</h3><p>Đây là nội dung của Bài tập ${num}.</p>`;
+    }
+</script>
+</body>
+</html>

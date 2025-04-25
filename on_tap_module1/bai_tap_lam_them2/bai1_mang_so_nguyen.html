@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra tam giác vuông</title>
+</head>
+<body>
+<h3>Nhập mảng số nguyên (n là bội số của 3, n ≤ 15):</h3>
+<input type="text" id="inputArray" placeholder="VD: 3,4,5,5,12,13">
+<button onclick="checkArray()">Kiểm tra</button>
+<p id="result"></p>
+
+<script>
+    function isRightTriangle(a, b, c) {
+        const sides = [a, b, c].sort((x, y) => x - y);
+        return sides[0]**2 + sides[1]**2 === sides[2]**2; //a^2 + b^2 = c^2
+    }
+
+    function checkArray() {
+        const input = document.getElementById("inputArray").value;
+        const arr = input.split(",").map(Number);
+
+        const n = arr.length;
+        const resultEl = document.getElementById("result");
+
+        if (n % 3 !== 0 || n > 15) {
+            resultEl.textContent = "Số lượng phần tử phải là bội số của 3 và ≤ 15.";
+            return;
+        }
+
+        let allGroupsValid = true;
+
+        for (let i = 0; i < n; i += 3) {
+            const [a, b, c] = [arr[i], arr[i+1], arr[i+2]];
+            if (!isRightTriangle(a, b, c)) {
+                allGroupsValid = false;
+                break;
+            }
+        }
+
+        resultEl.textContent = allGroupsValid ? "OK" : "NO";
+    }
+</script>
+</body>
+</html>

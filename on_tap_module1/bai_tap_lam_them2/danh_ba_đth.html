@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh Bạ Điện Thoại</title>
+</head>
+<body>
+<h2>Danh bạ điện thoại</h2>
+
+<label>Số điện thoại:</label>
+<input type="text" id="phone"><br>
+
+<label>Tên:</label>
+<input type="text" id="name"><br>
+
+<label>Địa chỉ:</label>
+<input type="text" id="address"><br>
+
+<button onclick="addContact()">Thêm</button>
+
+<h3>Danh sách:</h3>
+<ul id="contactList"></ul>
+
+<script>
+  let contacts = [];
+
+  function addContact() {
+    let phone = document.getElementById("phone").value;
+    let name = document.getElementById("name").value;
+    let address = document.getElementById("address").value;
+
+    if (!phone || !name || !address) {
+      alert("Vui lòng nhập đầy đủ thông tin!");
+      return;
+    }
+
+    contacts.push({ phone, name, address });
+    showContacts();
+
+    // Xoá nội dung nhập
+    document.getElementById("phone").value = "";
+    document.getElementById("name").value = "";
+    document.getElementById("address").value = "";
+  }
+
+  function showContacts() {
+    let list = document.getElementById("contactList");
+    list.innerHTML = "";
+
+    contacts.forEach((c, index) => {
+      list.innerHTML += `<li>
+          ${c.phone} - ${c.name} - ${c.address}
+          <button onclick="deleteContact(${index})">Xoá</button>
+        </li>`;
+    });
+  }
+
+  function deleteContact(index) {
+    contacts.splice(index, 1);
+    showContacts();
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chấm điểm học sinh</title>
+</head>
+<body>
+<script>
+    function lamTronDiem(diem) {
+        if (diem < 48) {
+            return diem;
+        }
+
+        let boiSoTruoc = Math.floor(diem / 5) * 5;
+        let boi5 = boiSoTruoc + 5;
+
+        if (boi5 - diem < 3) {
+            return boi5;
+        }
+        return diem;
+    }
+
+    let diem = parseInt(prompt("Nhập điểm của học sinh từ 1 đến 100"));
+
+    if (isNaN(diem) || diem < 0 || diem > 100) {
+        alert("Điểm không hợp lệ, vui lòng thử lại!");
+    } else {
+        let diemLamTron = lamTronDiem(diem);
+        alert("Điểm sau khi làm tròn: " + diemLamTron);
+    }
+</script>
+</body>
+</html>

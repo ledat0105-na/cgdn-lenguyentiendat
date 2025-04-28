@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Khách hàng bất động sản</title>
+</head>
+<body>
+
+<h1>Quản lý khách hàng</h1>
+<label>Mã KH: </label>
+<input type="text" id="makh" placeholder="VD: KH-xxx" required> <br><br>
+
+<label>Tên KH:</label>
+<input type="text" id="tenkh" placeholder="VD: Nguyễn Văn A" required> <br><br>
+
+<label>Số điện thoại:</label>
+<input type="text" id="sdt" placeholder="VD: 0123456789" required> <br><br>
+
+<label>Địa chỉ:</label>
+<input type="text" id="address" required> <br><br>
+
+<label>Email:</label>
+<input type="text" id="email" placeholder="VD: aido123@gmail.com" required> <br><br>
+
+<button onclick="themKhachHang()">Thêm khách hàng</button>
+
+<h2>Danh sách khách hàng</h2>
+<table border="1" cellpadding="10" id="bangkh">
+    <tr>
+        <th>STT</th>
+        <th>Mã KH</th>
+        <th>Tên KH</th>
+        <th>Số điện thoại</th>
+        <th>Địa chỉ</th>
+        <th>Email</th>
+    </tr>
+</table>
+
+<script>
+    let danhSachKhachHang = [];
+
+    function KhachHang(maKH, tenKH, sdt, diaChi, email) {
+        this.maKH = maKH;
+        this.tenKH = tenKH;
+        this.sdt = sdt;
+        this.diaChi = diaChi;
+        this.email = email;
+    }
+
+    function themKhachHang() {
+        let maKH = document.getElementById("makh").value;
+        let tenKH = document.getElementById("tenkh").value;
+        let sdt = document.getElementById("sdt").value;
+        let diaChi = document.getElementById("address").value;
+        let email = document.getElementById("email").value;
+
+        if (maKH === "" || tenKH === "" || sdt === "" || diaChi === "" || email === "") {
+            alert("Vui lòng nhập đầy đủ thông tin!");
+            return;
+        }
+
+        let khachHangMoi = new KhachHang(maKH, tenKH, sdt, diaChi, email);
+        danhSachKhachHang.push(khachHangMoi);
+
+        document.getElementById("makh").value = "";
+        document.getElementById("tenkh").value = "";
+        document.getElementById("sdt").value = "";
+        document.getElementById("address").value = "";
+        document.getElementById("email").value = "";
+
+        hienThiDanhSach();
+    }
+
+    function hienThiDanhSach() {
+        let bang = document.getElementById("bangkh");
+
+        bang.innerHTML = "<tr><th>STT</th><th>Mã KH</th><th>Tên KH</th><th>Số điện thoại</th><th>Địa chỉ</th><th>Email</th></tr>";
+
+        for (let i = 0; i < danhSachKhachHang.length; i++) {
+            let kh = danhSachKhachHang[i];
+
+            let row = "<tr>";
+            row += "<td>" + (i + 1) + "</td>";
+            row += "<td>" + kh.maKH + "</td>";
+            row += "<td>" + kh.tenKH + "</td>";
+            row += "<td>" + kh.sdt + "</td>";
+            row += "<td>" + kh.diaChi + "</td>";
+            row += "<td>" + kh.email + "</td>";
+            row += "</tr>";
+
+            bang.innerHTML += row;
+        }
+    }
+</script>
+
+</body>
+</html>

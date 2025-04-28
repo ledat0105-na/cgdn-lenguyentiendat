@@ -39,7 +39,8 @@
         if (result.length === 0) {
             outputDiv.innerHTML = "Không tìm thấy cặp nào thoả mãn.";
         } else {
-            outputDiv.innerHTML = `Các cặp hợp lệ (đã sắp xếp): <br> [ ${result.map(pair => `[${pair.join(",")}]`).join(", ")} ]`;
+            outputDiv.innerHTML = `Các cặp hợp lệ (đã sắp xếp): <br>
+        [ ${result.map(pair => `[${pair.join(",")}]`).join(", ")} ]`;
         }
     }
 </script>

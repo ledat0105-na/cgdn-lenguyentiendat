@@ -49,14 +49,14 @@
 
     contacts.forEach((c, index) => {
       list.innerHTML += `<li>
-          ${c.phone} - ${c.name} - ${c.address}
-          <button onclick="deleteContact(${index})">Xoá</button>
-        </li>`;
+                              ${c.phone} - ${c.name} - ${c.address}
+                              <button onclick="deleteContact(${index})">Xoá</button>
+                         </li>`;
     });
   }
 
   function deleteContact(index) {
-    contacts.splice(index, 1);
+    contacts.splice(inde0x, 1);
     showContacts();
   }
 </script>

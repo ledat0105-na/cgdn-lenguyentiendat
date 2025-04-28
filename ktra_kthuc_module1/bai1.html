@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính tổng các phần tử</title>
+</head>
+<body>
+<script>
+    let inputArr = prompt("Nhập các số nguyên, cách nhau bởi dấu phẩy (ví dụ: 15,30,45,22,18,75,90):");
+    let arr = inputArr.split(',').map(function(item) {
+        return parseInt(item.trim(), 10);
+    });
+
+    if (arr.length > 20) {
+        alert("Mảng không vượt quá 20 phần tử!");
+    } else {
+        document.write("Mảng đã nhập: " + arr.join(", ") + "<br><br>");
+
+        let soChiaHet = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 3 === 0 && arr[i] % 5 === 0) {
+                soChiaHet.push(arr[i]);
+            }
+        }
+
+        document.writeln("Các số chia hết cho 3 và 5: " + soChiaHet.join(", ") + "<br><br>");
+
+        let sum = soChiaHet.reduce(function(a, b) {
+            return a + b;
+        });
+
+        document.writeln("Tổng các số đó là: " + sum);
+    }
+</script>
+</body>
+</html>
